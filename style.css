@@ -34,7 +34,7 @@
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-    background-color: #04AA6D;
+    background-color: #c2cdfd;
     color: white;
     padding: 16px 20px;
     border: none;
@@ -49,7 +49,7 @@
     box-sizing: border-box;
 }
 .days li:hover{
-    background: #8feeda;
+    background: #f5d534;
 }
 ul {
     list-style-type: none;
@@ -62,7 +62,7 @@ body {
 .month {
     padding: 70px 25px;
     width: 100%;
-    background: #1abc9c;
+    background: #8793c4;
     text-align: center;
 }
 
@@ -91,7 +91,7 @@ body {
 .weekdays {
     margin: 0;
     padding: 10px 0;
-    background-color: #ddd;
+    background-color: #e3d539;
 }
 
 .weekdays li {
@@ -152,7 +152,7 @@ body {
 .header {
     padding: 5px;
     text-align: center;
-    background: #1abc9c;
+    background: #92a3ff;
     color: white;
     font-size: 30px;
 }
