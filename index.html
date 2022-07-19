@@ -1,181 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <style>
-
-/*buton popup*/
-
-/* Button used to open the contact form - fixed at the bottom of the page */
-.open-button {
-    background-color: #555;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 23px;
-    right: 28px;
-    width: 280px;
-}
-
-/* The popup form - hidden by default */
-.form-popup {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-}
-
-/* Add styles to the form container */
-.form-container {
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
-}
-
-/* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-}
-
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-/* Set a style for the submit/login button */
-.form-container .btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom:10px;
-    opacity: 0.8;
-}
-
-/*final buton popup*/
-        * {box-sizing: border-box;}
-        ul {list-style-type: none;}
-        body {font-family: Verdana, sans-serif;}
-
-        .month {
-            padding: 70px 25px;
-            width: 100%;
-            background: #1abc9c;
-            text-align: center;
-        }
-
-        .month ul {
-            margin: 0;
-            padding: 0;
-        }
-
-        .month ul li {
-            color: white;
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .month .prev {
-            float: left;
-            padding-top: 10px;
-        }
-
-        .month .next {
-            float: right;
-            padding-top: 10px;
-        }
-
-        .weekdays {
-            margin: 0;
-            padding: 10px 0;
-            background-color: #ddd;
-        }
-
-        .weekdays li {
-            display: inline-block;
-            width: 13.6%;
-            color: #666;
-            text-align: center;
-        }
-
-        .ex-days{
-            padding: 10px 0;
-            background: #eee;
-            margin: 0;
-
-        }
-        .days {
-            padding: 10px 0;
-            background: #eee;
-            margin: 0;
-
-        }
-
-        .days li {
-            list-style-type: none;
-            display: inline-block;
-            width: 13.6%;
-            text-align: center;
-            margin-bottom: 5px;
-            font-size:12px;
-            color: #777;
-        }
-
-        .days li .active {
-            padding: 5px;
-            background: #2a1abc;
-            color: white !important
-        }
-
-        /* Add media queries for smaller screens */
-        @media screen and (max-width:720px) {
-            .weekdays li, .days li {width: 13.1%;}
-        }
-
-        @media screen and (max-width: 420px) {
-            .weekdays li, .days li {width: 12.5%;}
-            .days li .active {padding: 2px;}
-        }
-
-        @media screen and (max-width: 290px) {
-            .weekdays li, .days li {width: 12.2%;}
-        }
-        .header {
-            padding: 5px;
-            text-align: center;
-            background: #1abc9c;
-            color: white;
-            font-size: 30px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="script.js"></script>
+    <div class="header">
+        <h1>Calendar</h1>
+    </div>
 </head>
 <body>
 
-<div class="header">
-    <h1>Calendar</h1>
-</div>
-</head>
-
-
 <div class="month">
     <ul>
-        <li class="prev">&#10094;</li>
-        <li class="next">&#10095;</li>
         <li>
-            August<br>
-            <span style="font-size:18px">2021</span>
+            Luna mea <br>
+            <span style="font-size:18px">2022</span>
         </li>
     </ul>
 </div>
@@ -192,9 +30,9 @@
 
 <ul class="days">
     <li onclick="openForm(1)">01</li>
-    <li onclick="openForm2()">02</li>
-    <li onclick="openForm3()">03</li>
-    <li onclick="openForm1()">04</li>
+    <li onclick="openForm1(2)">02</li>
+    <li onclick="openForm2(3)">03</li>
+    <li onclick="openForm3(4)">04</li>
     <li onclick="openForm(5)">05</li>
     <li onclick="openForm(6)">06</li>
     <li onclick="openForm(7)">07</li>
@@ -224,47 +62,47 @@
     <li onclick="openForm(31)">31</li>
 </ul>
 
+
 <div class="form-popup" id="myForm">
     <form action="" class="form-container">
-        <h1>Login</h1>
-        <button type="submit" class="btn">Login</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        <h2>Numescu Prenumel</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Emblem-person-blue.svg/1024px-Emblem-person-blue.svg.png"
+             width="150" height="150">
+        <p id="1"></p>
+        <button type="button" class="btn" onclick="closeForm()">Close</button>
     </form>
 </div>
 
-<script>
-    function openForm(day) {
-        document.getElementById("myForm").style.display = "block";
-        alert(`DAY ${day}`);
-    }
+<div class="form-popup" id="myForm1">
+    <form action="" class="form-container">
+        <h2>Mirel Radoi</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV-6dBzrXhqhG8ozzzYvDiwLXcYSbaRN7KfA&usqp=CAU"
+             width="150" height="120">
+        <p id="2"></p>
+        <button type="button" class="btn" onclick="closeForm1()">Close</button>
+    </form>
+</div>
 
-    function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-    }
+<div class="form-popup" id="myForm2">
+    <form action="" class="form-container">
+        <h2>Numescu Ionescu</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYGBYsdaFK-ki1QV_CHqj6PR6J_I3NP2tmoA&usqp=CAU"
+             width="150" height="120">
+        <p id="3"></p>
+        <button type="button" class="btn" onclick="closeForm2()">Close</button>
+    </form>
+</div>
 
-    function openForm1() {
-        document.getElementById("myForm").style.display = "block";
-    }
+<div class="form-popup" id="myForm3">
+    <form action="" class="form-container">
+        <h2>Fara Nume</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT52Q0lIpQRXNMrbgrr_nQn_8yrwrbEXZdIwg&usqp=CAU"
+             width="150" height="120">
+        <p id="4"></p>
+        <button type="button" class="btn" onclick="closeForm3()">Close</button>
+    </form>
+</div>
 
-    function closeForm1() {
-        document.getElementById("myForm").style.display = "none";
-    }
-    function openForm2() {
-        document.getElementById("myForm").style.display = "block";
-    }
 
-    function closeForm2() {
-        document.getElementById("myForm").style.display = "none";
-    }
-    function openForm3() {
-        document.getElementById("myForm").style.display = "block";
-    }
-
-    function closeForm3() {
-        document.getElementById("myForm").style.display = "none";
-    }
-</script>
-</script>
-<a></a>
 </body>
 </html>
