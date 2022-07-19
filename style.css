@@ -48,7 +48,9 @@
 * {
     box-sizing: border-box;
 }
-
+.days li:hover{
+    background: #8feeda;
+}
 ul {
     list-style-type: none;
 }
