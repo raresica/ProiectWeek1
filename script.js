@@ -1,3 +1,23 @@
+(function() {
+    document.querySelectorAll('.day').forEach(item => {
+        item.addEventListener('click', event => {
+            console.log(event.target.dataset.date, event.target.innerText, "Weekend: " + event.currentTarget.classList.contains('weekend'),);
+        })
+    })
+    // console.log("basa");
+    // document.querySelectorAll('.day').forEach(item => {
+    //     console.log(item)
+    //     item.addEventListener('click', event => {
+    //         openForm(event.target.dataset.date);
+    //         console.log("ss")
+    //         openForm1(event.target.dataset.date);
+    //         alert(event.target.dataset.date);
+    //
+    //     })
+    // });
+})();
+
+
 function openForm(day) {
     document.getElementById("myForm").style.display = "block";
     alert(`DAY ${day}`);
